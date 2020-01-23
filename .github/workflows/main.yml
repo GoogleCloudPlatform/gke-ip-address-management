@@ -13,23 +13,24 @@ jobs:
       run: make basefiles npm-install npm-test npm-build
       env:
         IPAM_HOST_URL: https://googlecloudplatform.github.io/gke-ip-address-management/ 
-    - name: Restore files to be able to switch
-      run: git restore package-lock.json  
-    - name: Switch to the branch that hosts the app
-      run: git checkout gh-pages
-    - name: Remote previous files
-      run: git rm precache-* && git rm -r static
-    - name: Copy files to the root
-      run: cp -R build/* .
-    - name: Stage file changes
-      run: git add . 
-    - name: Commit changes
-      run: git config --global user.name "GitHub Actions" && git commit -m "Updating deployment"
+    #- name: Restore files to be able to switch
+    #  run: git restore package-lock.json  
+    #- name: Switch to the branch that hosts the app
+    #  run: git checkout gh-pages
+    #- name: Remote previous files
+    #  run: git rm precache-* && git rm -r static
+    #- name: Copy files to the root
+    #  run: cp -R build/* .
+    #- name: Stage file changes
+    #  run: git add . 
+    #- name: Commit changes
+    #  run: git config --global user.name "GitHub Actions" && git commit -m "Updating deployment"
     - name: Push changes
       uses: peaceiris/actions-gh-pages@v2
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./build 
 #    - name: Push changes
 #      uses: ad-m/github-push-action@master
 #      with:
