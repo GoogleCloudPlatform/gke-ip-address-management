@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/gke-ip-address-management/static/css/main.9549d78d.chunk.css",
-    "main.js": "/gke-ip-address-management/static/js/main.86fc8b49.chunk.js",
-    "main.js.map": "/gke-ip-address-management/static/js/main.86fc8b49.chunk.js.map",
-    "runtime~main.js": "/gke-ip-address-management/static/js/runtime~main.f57fdad4.js",
-    "runtime~main.js.map": "/gke-ip-address-management/static/js/runtime~main.f57fdad4.js.map",
-    "static/css/2.1e66eaca.chunk.css": "/gke-ip-address-management/static/css/2.1e66eaca.chunk.css",
-    "static/js/2.cb006032.chunk.js": "/gke-ip-address-management/static/js/2.cb006032.chunk.js",
-    "static/js/2.cb006032.chunk.js.map": "/gke-ip-address-management/static/js/2.cb006032.chunk.js.map",
-    "index.html": "/gke-ip-address-management/index.html",
-    "precache-manifest.5039d9ddf241da55d8ad7b171d687aa1.js": "/gke-ip-address-management/precache-manifest.5039d9ddf241da55d8ad7b171d687aa1.js",
-    "service-worker.js": "/gke-ip-address-management/service-worker.js",
-    "static/css/2.1e66eaca.chunk.css.map": "/gke-ip-address-management/static/css/2.1e66eaca.chunk.css.map",
-    "static/css/main.9549d78d.chunk.css.map": "/gke-ip-address-management/static/css/main.9549d78d.chunk.css.map"
+    "main.css": "/static/css/main.9549d78d.chunk.css",
+    "main.js": "/static/js/main.2b68df27.chunk.js",
+    "main.js.map": "/static/js/main.2b68df27.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.1e66eaca.chunk.css": "/static/css/2.1e66eaca.chunk.css",
+    "static/js/2.a6a4da62.chunk.js": "/static/js/2.a6a4da62.chunk.js",
+    "static/js/2.a6a4da62.chunk.js.map": "/static/js/2.a6a4da62.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b2dea31c7393a0dc0841b2a9a87a83fd.js": "/precache-manifest.b2dea31c7393a0dc0841b2a9a87a83fd.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.1e66eaca.chunk.css.map": "/static/css/2.1e66eaca.chunk.css.map",
+    "static/css/main.9549d78d.chunk.css.map": "/static/css/main.9549d78d.chunk.css.map"
   }
 }
