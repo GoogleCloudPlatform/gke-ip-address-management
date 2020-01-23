@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Create the production build
+      run: make npm-build
+    - name: Switch to the branch that hosts the app
+      run: git checkout gh-pages
