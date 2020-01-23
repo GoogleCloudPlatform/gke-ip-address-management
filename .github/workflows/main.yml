@@ -22,4 +22,7 @@ jobs:
     - name: Commit changes
       run: git config --global user.name "GitHub Actions" && git commit -m "Updating deployment"
     - name: Push changes
-      run: git push origin gh-pages
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
