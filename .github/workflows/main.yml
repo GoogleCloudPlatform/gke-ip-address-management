@@ -20,6 +20,6 @@ jobs:
     - name: Stage file changes
       run: git add . 
     - name: Commit changes
-      run: git commit -m "Updating deployment"
+      run: git config --global user.name "GitHub Actions" && git commit -m "Updating deployment"
     - name: Push changes
       run: git push origin gh-pages
