@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/gke-ip-address-management/precache-manifest.20c7c16116a714ce5031aa7fbfa45b1e.js"
+  "/gke-ip-address-management/precache-manifest.2d8bc22cca3f38356e04c3a7839c8d19.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/gke-ip-address-management/static/css/main.9549d78d.chunk.css",
-    "main.js": "/gke-ip-address-management/static/js/main.73e2a41f.chunk.js",
-    "main.js.map": "/gke-ip-address-management/static/js/main.73e2a41f.chunk.js.map",
+    "main.js": "/gke-ip-address-management/static/js/main.2244194c.chunk.js",
+    "main.js.map": "/gke-ip-address-management/static/js/main.2244194c.chunk.js.map",
     "runtime~main.js": "/gke-ip-address-management/static/js/runtime~main.f57fdad4.js",
     "runtime~main.js.map": "/gke-ip-address-management/static/js/runtime~main.f57fdad4.js.map",
     "static/css/2.1e66eaca.chunk.css": "/gke-ip-address-management/static/css/2.1e66eaca.chunk.css",
     "static/js/2.a6a4da62.chunk.js": "/gke-ip-address-management/static/js/2.a6a4da62.chunk.js",
     "static/js/2.a6a4da62.chunk.js.map": "/gke-ip-address-management/static/js/2.a6a4da62.chunk.js.map",
     "index.html": "/gke-ip-address-management/index.html",
-    "precache-manifest.20c7c16116a714ce5031aa7fbfa45b1e.js": "/gke-ip-address-management/precache-manifest.20c7c16116a714ce5031aa7fbfa45b1e.js",
+    "precache-manifest.2d8bc22cca3f38356e04c3a7839c8d19.js": "/gke-ip-address-management/precache-manifest.2d8bc22cca3f38356e04c3a7839c8d19.js",
     "service-worker.js": "/gke-ip-address-management/service-worker.js",
     "static/css/2.1e66eaca.chunk.css.map": "/gke-ip-address-management/static/css/2.1e66eaca.chunk.css.map",
     "static/css/main.9549d78d.chunk.css.map": "/gke-ip-address-management/static/css/main.9549d78d.chunk.css.map"
