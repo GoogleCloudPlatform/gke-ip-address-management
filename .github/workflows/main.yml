@@ -13,6 +13,8 @@ jobs:
       run: make basefiles npm-install npm-test npm-build
     - name: Switch to the branch that hosts the app
       run: git switch -c gh-pages
+    - name: Remote previous files
+      run: git rm precache-* && git rm -r static
     - name: Copy files to the root
       run: cp -R build/* .
     - name: Stage file changes
