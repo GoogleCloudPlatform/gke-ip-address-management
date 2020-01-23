@@ -13,3 +13,7 @@ jobs:
       run: make basefiles npm-install npm-test npm-build
     - name: Switch to the branch that hosts the app
       run: git switch -c gh-pages
+    - name: Copy files 
+      run: cp -R build/* .
+    - name: Status
+      run: git status 
