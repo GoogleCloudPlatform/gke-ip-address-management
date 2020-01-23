@@ -11,6 +11,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: Create the production build
       run: make basefiles npm-install npm-test npm-build
+      env:
+        IPAM_HOST_URL: https://googlecloudplatform.github.io/gke-ip-address-management/ 
     - name: Restore files to be able to switch
       run: git restore package-lock.json  
     - name: Switch to the branch that hosts the app
