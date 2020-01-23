@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Create the production build
-      run: make npm-build
+      run: make basefiles npm-install npm-test npm-build
     - name: Switch to the branch that hosts the app
-      run: git checkout gh-pages
+      run: git switch -c gh-pages
