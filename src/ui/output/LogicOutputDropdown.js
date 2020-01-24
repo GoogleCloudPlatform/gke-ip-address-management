@@ -15,7 +15,7 @@
 import React, {Component} from 'react';
 import '../../App.css';
 import {Input, Label, FormGroup, Col} from 'reactstrap';
-import Logic from '../../Logic';
+import Logic from '../../logic/Logic';
 import PropTypes from 'prop-types';
 
 /**
@@ -45,7 +45,7 @@ class LogicOutputDropdown extends Component {
     const options = [];
     combinations.forEach(function(element, index) {
       options.push(
-          <option value={index} key={index}>Number of clusters: {index + 1} </option>
+          <option value={index} key={index}>Number of clusters: {index + 1} </option>,
       );
     });
     return options;

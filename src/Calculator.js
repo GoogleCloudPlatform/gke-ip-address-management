@@ -18,7 +18,7 @@ import {Container, Row} from 'reactstrap';
 
 import Parameters from './ui/input/Parameters';
 import Results from './ui/output/Results';
-import Logic from './Logic';
+import Logic from './logic/Logic';
 
 import InputRules from './rules/input/InputRules';
 import StateButtons from './components/StateButtons';

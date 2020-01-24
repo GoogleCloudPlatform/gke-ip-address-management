@@ -16,11 +16,12 @@ import React, {Component} from 'react';
 import '../../App.css';
 import LogicOutputDropdown from './LogicOutputDropdown';
 import LogicOutputNetworkRow from './LogicOutputNetworkRow';
+import LogicOutputFreeNetworkRow from './LogicOutputFreeNetworkRow';
 import {Table} from 'reactstrap';
 import NodeOutputRules from '../../rules/output/NodeOutputRules';
 import ServiceOutputRules from '../../rules/output/ServiceOutpuRules';
 import PodOutputRules from '../../rules/output/PodOutputRules';
-import Logic from '../../Logic';
+import Logic from '../../logic/Logic';
 import PropTypes from 'prop-types';
 
 /**
@@ -43,7 +44,6 @@ class LogicOutput extends Component {
     };
 
     this.handleUpdateOutput = this.handleUpdateOutput.bind(this);
-
     this.handleChangeCombination = this.handleChangeCombination.bind(this);
   }
   /**
@@ -86,6 +86,71 @@ class LogicOutput extends Component {
   };
 
   /**
+   *
+   * Create the rows representing the available or free CIDR ranges.
+   *
+   * @return {Object} the details rows.
+   */
+  createFreeRows = () => {
+    const logic = this.props.logic;
+    const combination = logic.getCombinations()[
+        this.state.output.combinationIndex
+    ];
+    const freeRanges = combination.freeRanges;
+    const rows = [];
+
+    freeRanges.forEach((freeRange) => {
+      rows.push(<LogicOutputFreeNetworkRow key={freeRange.netStart} network={freeRange} />);
+    });
+
+    return rows;
+  };
+
+
+  /**
+   *
+   * Create the detail tables.
+   *
+   * @return {Object} the detail tables.
+   */
+  createTables = () => {
+    const logic = this.props.logic;
+    if (logic.getCombinations().length<this.state.output.combinationIndex) {
+      return (<div><h3> Invalid Combination Selected </h3></div>);
+    }
+
+    return (<div><h3> VPCs and Subnets required </h3>
+      <Table>
+        <tbody>
+          <tr>
+            <th> Network </th>
+            <th> Start </th>
+            <th> End </th>
+            <th> Name </th>
+            <th> VPC Name </th>
+            <th> Subnet Range Name </th>
+            <th> Subnet Range Type </th>
+            <th> Description </th>
+          </tr>
+          {this.createRows()}
+        </tbody>
+      </Table>{' '}
+      <h3> Free Subnets </h3>
+      <Table>
+        <tbody>
+          <tr>
+            <th> Network </th>
+            <th> Start </th>
+            <th> End </th>
+            <th> Netmask </th>
+          </tr>
+          {this.createFreeRows()}
+        </tbody>
+      </Table>
+    </div>);
+  }
+
+  /**
    * Handle the selection of a different combination to be displayed.
    *
    * @param {number} combinationIndex The index of the combinations to be displayed.
@@ -94,7 +159,7 @@ class LogicOutput extends Component {
     this.handleUpdateOutput(
         Object.assign({}, this.state.output, {
           combinationIndex: combinationIndex,
-        })
+        }),
     );
   }
 
@@ -140,21 +205,7 @@ class LogicOutput extends Component {
           logic={this.props.logic}
           changeHandler={this.handleChangeCombination}
         />{' '}
-        <Table>
-          <tbody>
-            <tr>
-              <th> Network </th>
-              <th> Start </th>
-              <th> End </th>
-              <th> Name </th>
-              <th> VPC Name </th>
-              <th> Subnet Range Name </th>
-              <th> Subnet Range Type </th>
-              <th> Description </th>
-            </tr>
-            {this.createRows()}
-          </tbody>
-        </Table>{' '}
+        {this.createTables()}
       </div>
     );
   }

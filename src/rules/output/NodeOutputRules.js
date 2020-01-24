@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import IPUtils from '../../IPUtils';
+import IPUtils from '../../logic/IPUtils';
 
 /**
  * Rules for the main subnet range based on the subnet size
@@ -70,7 +70,7 @@ class ClusterNetworkRules {
    */
   maximum() {
     const clusterNetmaskIps = IPUtils.netmaskToUsableIps(
-        this.input.clusterNetmask
+        this.input.clusterNetmask,
     );
     const podNetmaskIps = IPUtils.netmaskToUsableIps(this.input.nodePodNetmask);
     return clusterNetmaskIps / podNetmaskIps;
@@ -154,7 +154,7 @@ class NodeOutputRules {
 
     const regionalLocationRules = new RegionalLocationRules(
         this.input,
-      v1 < v2 ? v1 : v2
+      v1 < v2 ? v1 : v2,
     );
 
     return regionalLocationRules.maximum();
@@ -184,7 +184,7 @@ class NodeOutputRules {
         text: `Nodes in a multi-zonal cluster (with ${
           this.input.extraZones
         } extra zone) have to be deployed in multiples of ${Number.parseInt(
-            this.input.extraZones
+            this.input.extraZones,
         ) + 1}`,
       });
     }

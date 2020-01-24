@@ -56,7 +56,7 @@ class StateButtons extends React.Component {
     this.setState(
         Object.assign({}, this.state.input, {
           configText: e.target.value,
-        })
+        }),
     );
   }
 

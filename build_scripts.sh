@@ -14,11 +14,11 @@
 
 
 function npm_build() {
-if [ -z "${IPAM_HOST_URL}" ]; then 
-        echo "Building distribution to be run locally"        
+if [ -z "${IPAM_HOST_URL}" ]; then
+        echo "Building distribution to be run locally"
         npm run build
 else
-        echo "Building distribution to be deployed at ${IPAM_HOST_URL}"        
+        echo "Building distribution to be deployed at ${IPAM_HOST_URL}"
         jq -c --arg hosturl "$IPAM_HOST_URL" '. + { "homepage": $hosturl }' package.json > package.json.new
         cp package.json package.json.org
         cp package.json.new package.json
