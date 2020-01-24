@@ -101,6 +101,7 @@ class Logic {
       if (packerResults.state === 'ok') {
         validCombinations.push({
           networks: packerResults.packedNets,
+          freeRanges: packerResults.freeRanges,
         });
       } else {
         ok = false;

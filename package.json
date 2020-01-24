@@ -9,7 +9,7 @@
     "minimist": "^1.2.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^3.3.0",
     "reactstrap": "^6.5.0"
   },
   "scripts": {

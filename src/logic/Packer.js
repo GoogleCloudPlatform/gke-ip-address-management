@@ -54,29 +54,8 @@ class Packer {
         };
       }
     }
-    const freeRanges = [];
-    // Pack the remaining IPs into free ranges
-    // var freeDone = false;
-    // while (!freeDone) {
 
-    //   var subnet = {
-    //     mask : lastMask
-    //   }
-
-    //   var fit = this.fit(currentIp, endIp, subnet);
-    //   if (fit.fit) {
-    //       freeRanges.push({
-    //         mask: lastMask,
-    //         netStart: currentIp,
-    //         netEnd: fit.end
-    //     });
-    //     currentIp = fit.end + 1;
-    //   } else {
-    //     freeDone = true;
-
-    //   }
-    // }
-
+    const freeRanges=this.findEmptyRanges(space, currentIp);
     return {
       state: 'ok',
       packedNets: packedNets,
@@ -86,9 +65,9 @@ class Packer {
 
   /**
    * Tries to fit a subnet between spaceStart and spaceEnd
-   * @param {*} spaceStart
-   * @param {*} spaceEnd
-   * @param {*} currentNet
+   * @param {number} spaceStart
+   * @param {number} spaceEnd
+   * @param {number} currentNet
    * @return {Object} object with the result
    */
   fit(spaceStart, spaceEnd, currentNet) {
@@ -118,6 +97,36 @@ class Packer {
         return a.mask - b.mask;
       }
     });
+  }
+
+  /**
+   * Finds the largest free CIDR blocks in a subnet, starting from a particular IP.
+   *
+   * @param {Object} space source address space.
+   * @param {number} firstFreeIpDec first free IP.
+   * @return {Array} sorted free subnet.
+   */
+  findEmptyRanges(space, firstFreeIpDec) {
+    const startIp = IPUtils.netStart(IPUtils.dotToDec(space.net), space.mask);
+    const endIp = IPUtils.netEnd(startIp, space.mask);
+    const maxIp = startIp + (endIp - firstFreeIpDec);
+    const freeNets = [];
+    let currentIp = startIp;
+    for (let mask = space.mask; mask < 32; mask ++ ) {
+      const subnet = {
+        mask: mask,
+      };
+      const fit = this.fit(currentIp, maxIp, subnet);
+      if (fit.fit) {
+        freeNets.unshift({
+          mask: mask,
+          netStart: endIp - fit.end +startIp,
+          netEnd: endIp - currentIp +startIp,
+        });
+        currentIp = fit.end + 1;
+      }
+    }
+    return freeNets;
   }
 }
 

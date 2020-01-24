@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import IPUtils from '../../IPUtils';
+import IPUtils from '../../logic/IPUtils';
 
 /**
  * Rules for the Service subnet range

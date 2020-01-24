@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,25 +18,9 @@ import IPUtils from '../../logic/IPUtils';
 import PropTypes from 'prop-types';
 
 /**
- * A row for a particular subnet definition
+ * A row for an available or free subnet.
  */
-class LogicOutputNetworkRow extends Component {
-  /**
-   * Pretty format the subnet type.
-   * @param {type} type The subnet type.
-   * @return {string} subnet type text.
-   */
-  subnetTypeText(type) {
-    if (type === 'PRIMARY') {
-      return 'Primary';
-    } else if (type === 'SECONDARY') {
-      return 'Secondary';
-    } else if (type === 'MANAGED') {
-      return 'Google Managed';
-    }
-    return 'N/A';
-  }
-
+class LogicOutputFreeNetworkRow extends Component {
   /**
    * Render the row.
    *
@@ -52,18 +36,14 @@ class LogicOutputNetworkRow extends Component {
         </td>
         <td> {IPUtils.decToDot(this.props.network.netStart)} </td>
         <td> {IPUtils.decToDot(this.props.network.netEnd)} </td>
-        <td> {this.props.network.name} </td>
-        <td> {this.props.network.vpcName} </td>
-        <td> {this.props.network.subnetRangeName} </td>
-        <td> {this.subnetTypeText(this.props.network.type)} </td>
-        <td> {this.props.network.description} </td>
+        <td> /{this.props.network.mask} </td>
       </tr>
     );
   }
 }
 
-LogicOutputNetworkRow.propTypes = {
+LogicOutputFreeNetworkRow.propTypes = {
   network: PropTypes.object,
 };
 
-export default LogicOutputNetworkRow;
+export default LogicOutputFreeNetworkRow;

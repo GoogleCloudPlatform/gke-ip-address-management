@@ -76,7 +76,7 @@ class Parameters extends Component {
     this.props.handleUpdateInput(
         Object.assign({}, this.props.input, {
           locationType: newValue,
-        })
+        }),
     );
   }
 
@@ -90,7 +90,7 @@ class Parameters extends Component {
     this.props.handleUpdateInput(
         Object.assign({}, this.props.input, {
           extraZones: newValue,
-        })
+        }),
     );
   }
 
@@ -104,7 +104,7 @@ class Parameters extends Component {
     this.props.handleUpdateInput(
         Object.assign({}, this.props.input, {
           network: e.target.value,
-        })
+        }),
     );
   }
 
@@ -118,7 +118,7 @@ class Parameters extends Component {
     this.props.handleUpdateInput(
         Object.assign({}, this.props.input, {
           [propName]: newValue,
-        })
+        }),
     );
   }
 

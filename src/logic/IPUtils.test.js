@@ -40,7 +40,7 @@ it('netEnd calculation', () => {
 
 it('Netmask calculation', () => {
   expect(IPUtils.netmaskToDecimal(24)).toEqual(
-      IPUtils.dotToDec('255.255.255.0')
+      IPUtils.dotToDec('255.255.255.0'),
   );
   expect(IPUtils.netmaskToDecimal(8)).toEqual(IPUtils.dotToDec('255.0.0.0'));
 });

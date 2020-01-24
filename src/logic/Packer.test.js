@@ -27,7 +27,7 @@ it('Ok, with a single one', () => {
           name: 'test',
           mask: 16,
         },
-      ]
+      ],
   );
   expect(result.state).toEqual('ok');
   expect(result.packedNets.length).toEqual(1);
@@ -53,7 +53,7 @@ it('Ok, with a two subnets', () => {
           name: 'test 2',
           mask: 16,
         },
-      ]
+      ],
   );
   expect(result.state).toEqual('ok');
   expect(result.packedNets.length).toEqual(2);
@@ -108,7 +108,7 @@ it('Bad, with a single one', () => {
           name: 'test',
           mask: 16,
         },
-      ]
+      ],
   );
   expect(result.state).toEqual('bad');
 });
@@ -122,18 +122,47 @@ it('check fit', () => {
       p.fit(IPUtils.dotToDec('192.168.0.1'),
           IPUtils.dotToDec('192.168.0.255'), {
             mask: 25,
-          }).fit
+          }).fit,
   ).toEqual(true);
   expect(
       p.fit(IPUtils.dotToDec('192.168.0.1'),
           IPUtils.dotToDec('192.168.0.255'), {
             mask: 24,
-          }).fit
+          }).fit,
   ).toEqual(true);
   expect(
       p.fit(IPUtils.dotToDec('192.168.0.1'),
           IPUtils.dotToDec('192.168.0.255'), {
             mask: 23,
-          }).fit
+          }).fit,
   ).toEqual(false);
+});
+
+
+it('Find single free range', () =>{
+  const p = new Packer();
+  const result= p.findEmptyRanges({
+    net: '192.168.0.1',
+    mask: 24,
+  }, IPUtils.dotToDec('192.168.0.192'));
+  expect(result.length).toEqual(1);
+  expect(result[0].mask).toEqual(26);
+  expect(IPUtils.decToDot(result[0].netStart)).toEqual('192.168.0.192');
+  expect(IPUtils.decToDot(result[0].netEnd)).toEqual('192.168.0.255');
+});
+
+it('Find 2 free ranges', () =>{
+  const p = new Packer();
+  const result= p.findEmptyRanges({
+    net: '192.168.0.1',
+    mask: 24,
+  }, IPUtils.dotToDec('192.168.0.160'));
+  expect(result.length).toEqual(2);
+  expect(result[0].mask).toEqual(27);
+  expect(IPUtils.decToDot(result[0].netStart)).toEqual('192.168.0.160');
+  expect(IPUtils.decToDot(result[0].netEnd)).toEqual('192.168.0.191');
+
+  expect(result[1].mask).toEqual(26);
+  expect(IPUtils.decToDot(result[1].netStart)).toEqual('192.168.0.192');
+  expect(IPUtils.decToDot(result[1].netEnd)).toEqual('192.168.0.255');
 });

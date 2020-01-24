@@ -27,19 +27,19 @@ podTemplate(label: label, containers: [
         checkout scm
       }
       stage('Verify Headers') {
-        sh 'make verify-header' 
+        sh 'make verify-header'
       }
     }
-    container('node') {      
+    container('node') {
       stage('Install dependencies') {
-        sh 'make npm-install'      
-      }      
+        sh 'make npm-install'
+      }
       stage('Run tests') {
-        sh 'make npm-test'    
+        sh 'make npm-test'
       }
       stage('Run lint') {
-        sh 'make lint' 
+        sh 'make lint'
       }
-    }    
+    }
   }
 }
