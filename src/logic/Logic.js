@@ -33,7 +33,7 @@ class Logic {
     };
     let ok = true;
     let count = 1;
-    while (ok && count < 150) {
+    while (ok && count < 1001) {
       const networks = [];
       const targetNumberLength = count.toString().length;
       for (let j = 1; j <= count; j++) {
