@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a9b475a1b3161a2a347ba1ff0dcfbb45",
+    "revision": "9f0816b885ff1fb1ec9cdc14ae07ee29",
     "url": "/gke-ip-address-management/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gke-ip-address-management/static/css/2.b213cd0e.chunk.css"
   },
   {
-    "revision": "531bebd76c5c1fef2140",
+    "revision": "d279a198f5526cb25b71",
     "url": "/gke-ip-address-management/static/css/main.9549d78d.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gke-ip-address-management/static/js/2.4e1192ed.chunk.js.LICENSE"
   },
   {
-    "revision": "531bebd76c5c1fef2140",
-    "url": "/gke-ip-address-management/static/js/main.a518ee07.chunk.js"
+    "revision": "d279a198f5526cb25b71",
+    "url": "/gke-ip-address-management/static/js/main.c4f827ee.chunk.js"
   },
   {
     "revision": "5b794b7de1ebcd540f8c",
