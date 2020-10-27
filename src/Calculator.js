@@ -84,6 +84,7 @@ class Calculator extends Component {
     this.setState({
       input: input,
       logic: logic,
+      inputRules: new InputRules(input),
     });
   }
 
