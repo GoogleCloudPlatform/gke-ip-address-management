@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/gke-ip-address-management/static/css/main.9549d78d.chunk.css",
-    "main.js": "/gke-ip-address-management/static/js/main.c4f827ee.chunk.js",
-    "main.js.map": "/gke-ip-address-management/static/js/main.c4f827ee.chunk.js.map",
-    "runtime-main.js": "/gke-ip-address-management/static/js/runtime-main.23f98933.js",
-    "runtime-main.js.map": "/gke-ip-address-management/static/js/runtime-main.23f98933.js.map",
-    "static/css/2.b213cd0e.chunk.css": "/gke-ip-address-management/static/css/2.b213cd0e.chunk.css",
-    "static/js/2.4e1192ed.chunk.js": "/gke-ip-address-management/static/js/2.4e1192ed.chunk.js",
-    "static/js/2.4e1192ed.chunk.js.map": "/gke-ip-address-management/static/js/2.4e1192ed.chunk.js.map",
+    "main.css": "/gke-ip-address-management/static/css/main.8b4c310e.chunk.css",
+    "main.js": "/gke-ip-address-management/static/js/main.75371a7b.chunk.js",
+    "main.js.map": "/gke-ip-address-management/static/js/main.75371a7b.chunk.js.map",
+    "runtime-main.js": "/gke-ip-address-management/static/js/runtime-main.25a30e81.js",
+    "runtime-main.js.map": "/gke-ip-address-management/static/js/runtime-main.25a30e81.js.map",
+    "static/css/2.2cebbb50.chunk.css": "/gke-ip-address-management/static/css/2.2cebbb50.chunk.css",
+    "static/js/2.44701622.chunk.js": "/gke-ip-address-management/static/js/2.44701622.chunk.js",
+    "static/js/2.44701622.chunk.js.map": "/gke-ip-address-management/static/js/2.44701622.chunk.js.map",
     "index.html": "/gke-ip-address-management/index.html",
-    "precache-manifest.aee6dbf89e94b3bec8d6ddc7c7862fbd.js": "/gke-ip-address-management/precache-manifest.aee6dbf89e94b3bec8d6ddc7c7862fbd.js",
-    "service-worker.js": "/gke-ip-address-management/service-worker.js",
-    "static/css/2.b213cd0e.chunk.css.map": "/gke-ip-address-management/static/css/2.b213cd0e.chunk.css.map",
-    "static/css/main.9549d78d.chunk.css.map": "/gke-ip-address-management/static/css/main.9549d78d.chunk.css.map",
-    "static/js/2.4e1192ed.chunk.js.LICENSE": "/gke-ip-address-management/static/js/2.4e1192ed.chunk.js.LICENSE"
+    "static/css/2.2cebbb50.chunk.css.map": "/gke-ip-address-management/static/css/2.2cebbb50.chunk.css.map",
+    "static/css/main.8b4c310e.chunk.css.map": "/gke-ip-address-management/static/css/main.8b4c310e.chunk.css.map",
+    "static/js/2.44701622.chunk.js.LICENSE.txt": "/gke-ip-address-management/static/js/2.44701622.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.23f98933.js",
-    "static/css/2.b213cd0e.chunk.css",
-    "static/js/2.4e1192ed.chunk.js",
-    "static/css/main.9549d78d.chunk.css",
-    "static/js/main.c4f827ee.chunk.js"
+    "static/js/runtime-main.25a30e81.js",
+    "static/css/2.2cebbb50.chunk.css",
+    "static/js/2.44701622.chunk.js",
+    "static/css/main.8b4c310e.chunk.css",
+    "static/js/main.75371a7b.chunk.js"
   ]
 }
