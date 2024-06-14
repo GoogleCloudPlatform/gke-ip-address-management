@@ -1,5 +1,7 @@
 # GKE IP Address Management
 
+**This tool is no longer maintaned due to improvements on GKE networking that simplify the IP planning**
+
 A tool to do IP Address Management for VPC-native GKE(Google Kubernetes Engine) clusters.
 
 ## Introduction
